@@ -41,6 +41,15 @@ function min(a, b) {
 }
 console.log(min(4,4));
 
-function isEven(n) {
-    
+//task5
+function isEven(x) {
+  if (x < 0 ) {
+        return false
+  }
+   else if (x % 2 == 0) {
+        return true
+  } else {
+        return isEven(x-2)
+  }
 }
+console.log(isEven(0));
