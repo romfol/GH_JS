@@ -31,7 +31,7 @@ for (var y = 0; y < size; y++) {
 }
 console.log(board);
 
-//task4
+//task4S
 function min(a, b) {
     if (a<b)
         return a;
@@ -53,3 +53,26 @@ function isEven(x) {
   }
 }
 console.log(isEven(0));
+
+//task6
+function countBs(st) {
+    var result = 0;
+    for (var i = 0; i < st.length; i++) {
+        if (st[i] === "B") {
+            result += 1;
+        }
+    }
+return result;
+}
+console.log(countBs('BbasBfbs'))
+
+function countChar(st, srch) {
+    var result = 0;
+    for (var i = 0; i < st.length; i++) {
+        if (st.charAt(i) === srch) {
+            result += 1;
+        }
+    }
+return result;
+}
+console.log(countChar('BaabasBfsbs', 'a'))
