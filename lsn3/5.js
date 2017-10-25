@@ -49,4 +49,4 @@ var timeRecursion = performance.now();
 for (var i = 1; i < 1000; i++) pwr(111, 222);
 timeRecursion = performance.now() - timeRecursion;
 
-alert( "Рекурсия дольше у " + Math.round(timeRecursion / timeLoop) + " раз" );
+console.log( "Рекурсия дольше у " + Math.round(timeRecursion / timeLoop) + " раз" );
