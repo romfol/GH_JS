@@ -30,3 +30,23 @@ console.log(pwr(3, 4));
      return rest;
 }
 console.log(sum(46552));
+
+function pow(n, pwr) {
+    var result = n;
+    for (var i = 1; i < pwr; i++) {
+    result *= n; 
+    }
+    return result;
+}
+console.log( pow(5,5) );
+
+
+var timeLoop = performance.now();
+for (var i = 1; i < 1000; i++) pow(111, 222);
+timeLoop = performance.now() - timeLoop;
+
+var timeRecursion = performance.now();
+for (var i = 1; i < 1000; i++) pwr(111, 222);
+timeRecursion = performance.now() - timeRecursion;
+
+alert( "Рекурсия дольше у " + Math.round(timeRecursion / timeLoop) + " раз" );
