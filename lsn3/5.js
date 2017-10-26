@@ -11,7 +11,7 @@ function factorial(num) {
         return num*factorial(num-1);
     }
 }
-console.log(factorial(3));
+console.log(factorial(6));
 
 function pwr(num, pow) {
     if (pow !== 1) {        
@@ -20,7 +20,7 @@ function pwr(num, pow) {
         return num;
     }
 }
-console.log(pwr(3, 4));
+console.log(pwr(5, 5));
 
  function sum(num) {
      var rest = num % 10;
@@ -38,9 +38,19 @@ function pow(n, pwr) {
     }
     return result;
 }
-console.log( pow(5,5) );
+console.log(pow(5,5));
 
 
+function fact(num) {
+    var result = 1;
+    for (var y = 1; y <= num; y++) {
+        result = result * y;
+    }
+    return result;
+  }
+console.log(fact(6));
+
+//в случае со степенью 
 var timeLoop = performance.now();
 for (var i = 1; i < 1000; i++) pow(111, 222);
 timeLoop = performance.now() - timeLoop;
