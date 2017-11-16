@@ -74,11 +74,11 @@ function addNewItem() {
     }
 
     //local Storage
-    if (localStorage.getItem('inner') !== null) {
-        localStorage.getItem('inner');
-        document.body.children[2].children[0].innerText = 'some';
-    }
-    localStorage.setItem('inner', 'some');
+    //if (localStorage.getItem('inner') !== null) {
+    //    localStorage.getItem('inner');
+    //    document.body.children[2].children[0].innerText = 'some';
+    //}
+    // localStorage.setItem('inner', 'some');
 }
 
 //and it works
