@@ -1,0 +1,38 @@
+body {
+    max-width: 800px;
+    margin: auto;
+}
+
+h1, p {
+    text-align: center;
+    font-weight: normal;
+    font-style: italic;
+
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    position: relative;
+    border: 1px solid #ccc;
+    background: #eee;
+    padding: 5px 10px;
+    color: #000;
+    font-size: large;
+}
+.time {
+    position: absolute;
+    margin-top: 3px;
+    right: 150px;
+    font-size: small;
+}
+.delete {
+    position: absolute;
+    right: 10px;
+}
+.edit {
+    position: absolute;
+    right: 70px;
+}
