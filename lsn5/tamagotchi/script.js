@@ -1,4 +1,4 @@
-function Tamagotchi(name, health, satiety, strength, happiness, time, energy, money) {
+function Tamagotchi(name, health, satiety, strength, happiness, time, energy) {
     this.name = name;
     this.health = health;
     this.satiety = satiety;
@@ -6,14 +6,12 @@ function Tamagotchi(name, health, satiety, strength, happiness, time, energy, mo
     this.happiness = happiness;
     this.time = time;
     this.energy = energy;
-    this.money = money;
     this.feed = function() {
         this.satiety += 10;
         this.happiness += 5;
         this.strength += 5; 
         this.time -=1;
         this.energy += 15;
-        this.money -= 5;
     };
     this.play = function() {
         this.happiness += 15;
@@ -21,7 +19,6 @@ function Tamagotchi(name, health, satiety, strength, happiness, time, energy, mo
         this.satiety -= 5;
         this.time -=1;
         this.energy -= 15;
-        this.money -= 5;
     };
     this.sleep = function() {
         this.health += 10;
@@ -38,14 +35,6 @@ function Tamagotchi(name, health, satiety, strength, happiness, time, energy, mo
         this.happiness -= 10;
         this.time -=1;
         this.energy += 10;
-        this.money -= 10;
-    };
-    this.work = function() {
-        this.strength -= 5;
-        this.satiety -= 10;
-        this.time -=1;
-        this.energy -= 20;
-        this.money += 20;
     };
     this.selfDev = function() {
         this.health += 20;
@@ -54,12 +43,13 @@ function Tamagotchi(name, health, satiety, strength, happiness, time, energy, mo
         this.satiety -= 10;
         this.time -= 1;
         this.energy -= 10;
-        this.money += 10;
     };
 }
 
-var largo = new Tamagotchi('Largo', 100, 100, 100, 100, 100, 100, 100);
+//Largo construct
+let largo = new Tamagotchi('Largo', 100, 100, 100, 100, 100, 100, 100);
 
+//life elapse
 var lifeElapse = setInterval(function() {
     largo.health -= 10;
     largo.satiety -= 10;
@@ -71,14 +61,14 @@ var lifeElapse = setInterval(function() {
         clearInterval(lifeElapse);
         alert ('he died =(');
     }
-}, 3000);
+}, 3000)
 
-document.getElementById('name').innerHTML = largo.name;
-document.getElementById('health').textContent = largo.health;
+//methods into Html
+document.getElementById('health').innerHTML = largo.health;
 document.getElementById('satiety').innerHTML = largo.satiety;
 document.getElementById('strength').innerHTML = largo.strength;
 document.getElementById('happiness').innerHTML = largo.happiness;
 document.getElementById('time').innerHTML = largo.time;
 document.getElementById('energy').innerHTML = largo.energy;
-document.getElementById('money').innerHTML = largo.money;
+
 
