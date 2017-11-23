@@ -50,10 +50,10 @@ function Tamagotchi(name, health, satiety, strength, happiness, time, energy) {
 let largo = new Tamagotchi('Largo', 100, 100, 100, 100, 100, 100, 100);
 
 //life elapse
-var lifeElapse = setInterval(function() {
+let lifeElapse = setInterval(function() {
     largo.health -= 10;
     largo.satiety -= 10;
-    largo.strength -= 10 ;
+    largo.strength -= 10;
     largo.happiness -= 10;
     largo.time -= 1;
     largo.energy -= 10;
@@ -61,7 +61,7 @@ var lifeElapse = setInterval(function() {
         clearInterval(lifeElapse);
         alert ('he died =(');
     }
-}, 3000)
+}, 3000);
 
 //methods into Html
 document.getElementById('health').innerHTML = largo.health;
