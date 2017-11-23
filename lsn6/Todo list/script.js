@@ -54,6 +54,10 @@ function addNewItem() {
     deleteItm.innerHTML = 'Delete';
     deleteItm.onclick = deleteItem;
 
+    //create reverse
+    let reverse = document.getElementById('reverse');
+    reverse.onclick = reverseItem;
+
     //append li, date, edit and delete into todoList
     let list = document.getElementById('todoList');
     list.appendChild(listItem);
@@ -61,24 +65,17 @@ function addNewItem() {
     listItem.appendChild(edit);
     listItem.appendChild(deleteItm);
 
-    //reverse implement
+}
+function reverseItem() {
     let getCollection = document.body.children[2].childNodes;
+    let get = Array.prototype.slice.call(getCollection);
     //reverse - Array!
-    let getReverse = Array.prototype.slice.call(getCollection);
-    let reversed = getReverse.reverse();
-    document.body.children[1].children[2].onclick = reverseItem;
+    get.reverse();
 
-    function reverseItem() {/////
-
-        this.parentNode.nextElementSibling.childNodes =  reversed;
-    }
-
-    //local Storage
-    //if (localStorage.getItem('inner') !== null) {
-    //    localStorage.getItem('inner');
-    //    document.body.children[2].children[0].innerText = 'some';
-    //}
-    // localStorage.setItem('inner', 'some');
+    //getReverse.reverse();
+    //return document.body.children[2].childNodes;
+    //document.body.children[1].children[2].onclick = reverseItem;
+    //this.parentNode.nextElementSibling.childNodes = ff();
 }
 
 //and it works
