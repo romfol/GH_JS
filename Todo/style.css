@@ -1,0 +1,58 @@
+body {
+    max-width: 1000px;
+    margin: auto;
+    font-family: Courier, serif ;
+}
+
+h1, p {
+    text-align: center;
+}
+
+input {
+    text-indent: 10px;
+}
+button {
+    cursor: pointer;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    position: relative;
+    border: 1px solid #ccc;
+    background: #eee;
+    padding: 5px 10px;
+    font-size: large;
+    font-weight: 700;
+    text-indent: 10px;
+    cursor: -webkit-grabbing;
+}
+
+.remove {
+    position: absolute;
+    right: 10px;
+}
+
+.edit {
+    position: absolute;
+    right: 100px;
+}
+
+.complete {
+    position: absolute;
+    right: 200px;
+}
+
+.time {
+    position: absolute;
+    margin-top: 3px;
+    right: 350px;
+    font-size: small;
+}
+
+#completed li {
+    background: #ff864c;
+    text-decoration: line-through;
+}
