@@ -105,13 +105,3 @@ document.getElementById('reverse').addEventListener('click', function () {
 
 });
 
-//function reverseItem() {
-//    let getCollection = document.body.children[2].childNodes;
-//    let get = Array.prototype.slice.call(getCollection);
-//    //reverse - Array!
-//    get.reverse();
-//
-//    //getReverse.reverse();
-//    //return document.body.children[2].childNodes;
-//    //document.body.children[1].children[2].onclick = reverseItem;
-//    //this.parentNode.nextElementSibling.childNodes = ff();
