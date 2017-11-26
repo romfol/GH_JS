@@ -46,29 +46,39 @@ function Tamagotchi(name, health, satiety, strength, happiness, time, energy) {
     };
 }
 
+let person = prompt('Введіть ім\'я персонажу', 'Вася');
+
 //Largo construct
-let largo = new Tamagotchi('Largo', 100, 100, 100, 100, 100, 100, 100);
+let newTama = new Tamagotchi(person, 100, 100, 100, 100, 100, 100, 100);
+
+function outPut() {
+    document.getElementById('name').innerHTML = newTama.name;
+    document.getElementById('health').innerHTML = newTama.health;
+    document.getElementById('satiety').innerHTML = newTama.satiety;
+    document.getElementById('strength').innerHTML = newTama.strength;
+    document.getElementById('happiness').innerHTML = newTama.happiness;
+    document.getElementById('time').innerHTML = newTama.time;
+    document.getElementById('energy').innerHTML = newTama.energy;
+}
+outPut();
 
 //life elapse
 let lifeElapse = setInterval(function() {
-    largo.health -= 10;
-    largo.satiety -= 10;
-    largo.strength -= 10;
-    largo.happiness -= 10;
-    largo.time -= 1;
-    largo.energy -= 10;
-    if (largo.health <= 0||largo.satiety <=0 || largo.time <= 0){
+    newTama.health -= 5;
+    newTama.satiety -= 5;
+    newTama.strength -= 5;
+    newTama.happiness -= 5;
+    newTama.time -= 1;
+    newTama.energy -= 5;
+
+    outPut();
+
+    if (newTama.health <= 0||newTama.satiety <=0 || newTama.time <= 0){
         clearInterval(lifeElapse);
-        alert ('he died =(');
+        alert ('He wasted =(');
     }
 }, 3000);
 
-//methods into Html
-document.getElementById('health').innerHTML = largo.health;
-document.getElementById('satiety').innerHTML = largo.satiety;
-document.getElementById('strength').innerHTML = largo.strength;
-document.getElementById('happiness').innerHTML = largo.happiness;
-document.getElementById('time').innerHTML = largo.time;
-document.getElementById('energy').innerHTML = largo.energy;
+
 
 
