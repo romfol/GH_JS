@@ -48,7 +48,7 @@ function Tamagotchi(name, health, satiety, strength, happiness, time, energy) {
 
 let person = prompt('Введіть ім\'я персонажу', 'Вася');
 
-//Largo construct
+//newTama construct
 let newTama = new Tamagotchi(person, 100, 100, 100, 100, 100, 100, 100);
 
 function outPut() {
@@ -60,6 +60,7 @@ function outPut() {
     document.getElementById('time').innerHTML = newTama.time;
     document.getElementById('energy').innerHTML = newTama.energy;
 }
+
 outPut();
 
 //life elapse
@@ -75,7 +76,7 @@ let lifeElapse = setInterval(function() {
 
     if (newTama.health <= 0||newTama.satiety <=0 || newTama.time <= 0){
         clearInterval(lifeElapse);
-        alert ('He wasted =(');
+        alert ('Wasted =(');
     }
 }, 3000);
 

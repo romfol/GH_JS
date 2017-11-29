@@ -5,20 +5,21 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>HW_5</title>
 </head>
 <body>
-    <div class="status">
-        <p>Назва персонажу: <span id="name"></span></p>
-        <p>Здоров’я: <span id="health"></span></p>
-        <p>Ситість: <span id="satiety"></span></p>
-        <p>Сила: <span id="strength"></span></p>
-        <p>Щастя: <span id="happiness"></span></p>
-        <p>Час: <span id="time"></span></p>
-        <p>Енергія: <span id="energy"></span></p>
+    <div class="container">
+        <p>Назва персонажу<span id="name"></span></p>
+        <p>Здоров’я<span id="health"></span></p>
+        <p>Ситість<span id="satiety"></span></p>
+        <p>Сила<span id="strength"></span></p>
+        <p>Щастя<span id="happiness"></span></p>
+        <p>Час<span id="time"></span></p>
+        <p>Енергія<span id="energy"></span></p>
     </div>
-    <nav class="methods">
+    <nav class="container">
         <input type="button" id="feed" value="Накормити" onclick="newTama.feed()">
         <input type="button" id="play" value="Гратися" onclick="newTama.play()">
         <input type="button" id="sleep" value="Спати" onclick="newTama.sleep()">

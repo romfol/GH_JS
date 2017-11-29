@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: cornflowerblue;
+}
+
+.container p {
+    background-color: lightseagreen;
+    border: 2px solid gray;
+    height: 35px;
+
+}
+
+p span {
+    display: block;
+    text-align: center;
+}
+
+.container input {
+    margin: 5px;
+}
