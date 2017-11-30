@@ -24,31 +24,25 @@ li {
     border: 1px solid #ccc;
     background: #eee;
     padding: 5px 10px;
-    font-size: large;
+    font-size: 20px;
     font-weight: 700;
-    text-indent: 10px;
+    text-align: center;
     cursor: -webkit-grabbing;
 }
 
-.remove {
+.buttons {
     position: absolute;
     right: 10px;
 }
 
-.edit {
-    position: absolute;
-    right: 100px;
-}
-
-.complete {
-    position: absolute;
-    right: 200px;
+.buttons .complete, .buttons .edit {
+    margin-right: 10px;
 }
 
 .time {
     position: absolute;
-    margin-top: 3px;
-    right: 350px;
+    margin-top: 5px;
+    left: 10px;
     font-size: small;
 }
 
