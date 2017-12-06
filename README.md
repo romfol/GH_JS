@@ -1,1 +1,1 @@
-GH_JS practice
+JavaScript practice
