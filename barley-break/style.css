@@ -47,3 +47,14 @@ table {
     border-spacing: 0;
 }
 
+/*Styles*/
+
+body {
+    text-align: center;
+}
+input {
+    position: relative;
+    left: 20em;
+    top: 2em;
+    display: block;
+}
