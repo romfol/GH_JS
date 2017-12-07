@@ -113,7 +113,7 @@ function start() {
         }
     };
     window.onkeydown = function() {
-
+    ///////////
         if (field.victory()) {
             alert('You won :)');
         }
