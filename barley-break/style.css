@@ -50,11 +50,10 @@ table {
 /*Styles*/
 
 body {
+    max-width: 800px;
+    margin: auto;
     text-align: center;
 }
 input {
-    position: relative;
-    left: 20em;
-    top: 2em;
     display: block;
 }
