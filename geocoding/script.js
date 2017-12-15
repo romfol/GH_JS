@@ -17,21 +17,18 @@ document.getElementById('btn').addEventListener('click', function () {
     geocoder.geocode({address: address}, function(results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
             let result = results[0].geometry.location;
-            createMarker(result);
+            if(marker !== undefined && marker !== ''){
+                marker.setMap(null);
+                marker = '';
+            }
+            marker = new google.maps.Marker({
+                map: mapGet,
+                position: result
+            });
             mapGet.setCenter(result);
             mapGet.setZoom(12);
+
         }
         else alert('Enter correct address');
     });
 });
-
-function createMarker(position) {
-  if(marker !== undefined && marker !== ''){
-    marker.setMap(null);
-    marker = '';
-  }
-  marker = new google.maps.Marker({
-    map: mapGet,
-    position: position
-  });
-}
