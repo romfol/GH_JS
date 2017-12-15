@@ -17,6 +17,7 @@ document.getElementById('btn').addEventListener('click', function () {
     geocoder.geocode({address: address}, function(results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
             let result = results[0].geometry.location;
+            let infowindow = new google.maps.InfoWindow();
             if(marker !== undefined && marker !== ''){
                 marker.setMap(null);
                 marker = '';
@@ -24,6 +25,9 @@ document.getElementById('btn').addEventListener('click', function () {
             marker = new google.maps.Marker({
                 map: mapGet,
                 position: result
+            });
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
             });
             mapGet.setCenter(result);
             mapGet.setZoom(12);
