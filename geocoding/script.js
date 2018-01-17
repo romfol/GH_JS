@@ -18,6 +18,7 @@ document.getElementById('btn').addEventListener('click', function () {
         if (status === google.maps.GeocoderStatus.OK) {
             let result = results[0].geometry.location;
             let infowindow = new google.maps.InfoWindow();
+
             if(marker !== undefined && marker !== ''){
                 marker.setMap(null);
                 marker = '';
@@ -31,7 +32,6 @@ document.getElementById('btn').addEventListener('click', function () {
             });
             mapGet.setCenter(result);
             mapGet.setZoom(12);
-
         }
         else alert('Enter correct address');
     });
