@@ -1,0 +1,46 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 90%;
+    margin: 0 auto 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background-color: #eee;
+    border-radius: 0 0 5px 5px;
+    padding: 10px;
+}
+
+#todo-list {
+    width: 80%;
+    margin: 100px auto 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#todo-list ul {
+    padding: 0;
+}
+
+#todo-list li {
+    display: block;
+    height: 30px;
+    font-size: 25px;
+    font-family: Verdana;
+}
+
+.date {
+    font-size: small;
+}
+
+.text {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#todo-list li button {
+    float: right;
+}

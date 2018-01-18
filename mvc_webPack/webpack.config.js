@@ -1,5 +1,5 @@
-var debug = process.env.NODE_ENV !== "production";
-var webpack = require('webpack');
+let debug = process.env.NODE_ENV !== "production";
+let webpack = require('webpack');
 
 module.exports = {
     context: __dirname,
