@@ -1,3 +1,4 @@
+let HtmlWebpackPlugin = require('html-webpack-plugin');
 let path = require('path');
 
 module.exports = {
@@ -5,5 +6,14 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Todo list MVC',
+            minify: {
+                collapseWhitespace: true
+            },
+            template: './src/index.ejs'
+            })
+    ]
 };

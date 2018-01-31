@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -68,180 +68,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__controller_task__ = __webpack_require__(1);
-
-
-window.addEventListener('load', function () {
-    Object(__WEBPACK_IMPORTED_MODULE_0__controller_task__["a" /* default */])(document.getElementById('todo-list'));
-});
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = taskController;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_task__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__view_task__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_taskAddForm__ = __webpack_require__(3);
-
-
-
-
-
-function taskController(rootElement) {
-
-    Object(__WEBPACK_IMPORTED_MODULE_1__view_task__["a" /* default */])(rootElement, __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */], {
-        onDone,
-        onDelete,
-        onMove
-    });
-
-    Object(__WEBPACK_IMPORTED_MODULE_2__view_taskAddForm__["a" /* default */])(rootElement, {
-        onSubmit
-    });
-
-    function onDone(task, status) {
-        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].done(task, status);
-    }
-
-    function onDelete(task) {
-        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].delete(task);
-    }
-
-    function onSubmit(text) {
-        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].add(text);
-    }
-
-    function onMove(task) {
-        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].move(task);
-    }
-}
-
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = taskView;
-function taskView(rootElement, tasks, actions) {
-    let ul = document.createElement('ul');
-
-    let template = document.createElement('li');
-    template.innerHTML = `
-        <input type="checkbox" class="done">
-        <span class="date"></span>
-        <span class="text"></span>
-        <button class="delete">Delete</button>
-        <button class="up">Up</button>
-        <button class="down">Down</button>
-    `;
-
-    tasks.forEach(function(task) {
-        add(task);
-    });
-
-    tasks.on('done', function (task) {
-        [].forEach.call(ul.childNodes, function (li) {
-            if (li.task === task) {
-                li.querySelector('.text').style.textDecoration = task.done ? 'line-through' : '';
-            }
-        });
-    });
-
-    tasks.on('add', function (task) {
-        add(task);
-    });
-
-    tasks.on('delete', function (task) {
-        [].forEach.call(ul.childNodes, function (li) {
-            if (li.task === task) {
-                li.remove();
-            }
-        });
-    });
-
-    tasks.on('move', function () {
-        let liS = document.querySelectorAll('li');
-        for (let i = 0; i < liS.length; i++) {
-            ul.removeChild(liS[i]);
-        }
-        tasks.forEach(function(task) {
-            add(task);
-        });
-    });
-
-
-    rootElement.appendChild(ul);
-
-    function add(task) {
-        let li = template.cloneNode(true);
-        li.task = task;
-
-        let date = li.querySelector('.date');
-        date.innerText = task.date;
-
-        let text = li.querySelector('.text');
-        text.innerHTML = task.text;
-        text.style.textDecoration = task.done ? 'line-through' : '';
-
-        let checkbox = li.querySelector('.done');
-        checkbox.checked = task.done ? 'checked' : '';
-        checkbox.addEventListener('change', function (event) {
-            actions.onDone(task, event.target.checked);
-        });
-
-        li.querySelector('.delete').addEventListener('click', function (event) {
-            actions.onDelete(task);
-        });
-
-        li.querySelector('.up').addEventListener('click', function (event) {
-            actions.onMove(task);
-        });
-
-        li.querySelector('.down').addEventListener('click', function (event) {
-            actions.onMove(task);
-        });
-
-        ul.appendChild(li);
-    }
-}
-
-/***/ }),
-/* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = taskAddFormView;
-function taskAddFormView(rootElement, actions) {
-    let form = document.createElement('form');
-    form.innerHTML = `
-        <input type="text" name="text">
-        <input type="submit" value="Add">
-    `;
-
-    form.addEventListener('submit', function (event) {
-        let input = form.querySelector('[name=text]');
-        let text = input.value.trim();
-
-        if (text) {
-            actions.onSubmit(text);
-            input.value = '';
-        }
-        event.preventDefault();
-    });
-
-    rootElement.appendChild(form);
-}
-
-/***/ }),
-/* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__taskModel__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__taskModel__ = __webpack_require__(1);
 
 
 
@@ -256,11 +83,11 @@ let tasks = new __WEBPACK_IMPORTED_MODULE_0__taskModel__["a" /* default */]([
 /* harmony default export */ __webpack_exports__["a"] = (tasks);
 
 /***/ }),
-/* 5 */
+/* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_task__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_task__ = __webpack_require__(0);
 
 /* harmony default export */ __webpack_exports__["a"] = (TaskModel);
 
@@ -357,6 +184,179 @@ let options = {
 
 
 
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__controller_task__ = __webpack_require__(3);
+
+
+window.addEventListener('load', function () {
+    Object(__WEBPACK_IMPORTED_MODULE_0__controller_task__["a" /* default */])(document.getElementById('todo-list'));
+});
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = taskController;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_task__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__view_task__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_taskAddForm__ = __webpack_require__(5);
+
+
+
+
+
+function taskController(rootElement) {
+
+    Object(__WEBPACK_IMPORTED_MODULE_1__view_task__["a" /* default */])(rootElement, __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */], {
+        onDone,
+        onDelete,
+        onMove
+    });
+
+    Object(__WEBPACK_IMPORTED_MODULE_2__view_taskAddForm__["a" /* default */])(rootElement, {
+        onSubmit
+    });
+
+    function onDone(task, status) {
+        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].done(task, status);
+    }
+
+    function onDelete(task) {
+        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].delete(task);
+    }
+
+    function onSubmit(text) {
+        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].add(text);
+    }
+
+    function onMove(task) {
+        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].move(task);
+    }
+}
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = taskView;
+function taskView(rootElement, tasks, actions) {
+    let ul = document.createElement('ul');
+
+    let template = document.createElement('li');
+    template.innerHTML = `
+        <input type="checkbox" class="done">
+        <span class="date"></span>
+        <span class="text"></span>
+        <button class="delete">Delete</button>
+        <button class="up">Up</button>
+        <button class="down">Down</button>
+    `;
+
+    tasks.forEach(function(task) {
+        add(task);
+    });
+
+    tasks.on('done', function (task) {
+        [].forEach.call(ul.childNodes, function (li) {
+            if (li.task === task) {
+                li.querySelector('.text').style.textDecoration = task.done ? 'line-through' : '';
+            }
+        });
+    });
+
+    tasks.on('add', function (task) {
+        add(task);
+    });
+
+    tasks.on('delete', function (task) {
+        [].forEach.call(ul.childNodes, function (li) {
+            if (li.task === task) {
+                li.remove();
+            }
+        });
+    });
+
+    tasks.on('move', function () {
+        let liS = document.querySelectorAll('li');
+        for (let i = 0; i < liS.length; i++) {
+            ul.removeChild(liS[i]);
+        }
+        tasks.forEach(function(task) {
+            add(task);
+        });
+    });
+
+
+    rootElement.appendChild(ul);
+
+    function add(task) {
+        let li = template.cloneNode(true);
+        li.task = task;
+
+        let date = li.querySelector('.date');
+        date.innerText = task.date;
+
+        let text = li.querySelector('.text');
+        text.innerHTML = task.text;
+        text.style.textDecoration = task.done ? 'line-through' : '';
+
+        let checkbox = li.querySelector('.done');
+        checkbox.checked = task.done ? 'checked' : '';
+        checkbox.addEventListener('change', function (event) {
+            actions.onDone(task, event.target.checked);
+        });
+
+        li.querySelector('.delete').addEventListener('click', function (event) {
+            actions.onDelete(task);
+        });
+
+        li.querySelector('.up').addEventListener('click', function (event) {
+            actions.onMove(task);
+        });
+
+        li.querySelector('.down').addEventListener('click', function (event) {
+            actions.onMove(task);
+        });
+
+        ul.appendChild(li);
+    }
+}
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = taskAddFormView;
+function taskAddFormView(rootElement, actions) {
+    let form = document.createElement('form');
+    form.innerHTML = `
+        <input type="text" name="text">
+        <input type="submit" value="Add">
+    `;
+
+    form.addEventListener('submit', function (event) {
+        let input = form.querySelector('[name=text]');
+        let text = input.value.trim();
+
+        if (text) {
+            actions.onSubmit(text);
+            input.value = '';
+        }
+        event.preventDefault();
+    });
+
+    rootElement.appendChild(form);
+}
 
 /***/ })
 /******/ ]);
