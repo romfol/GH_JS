@@ -1,16 +1,9 @@
-let debug = process.env.NODE_ENV !== "production";
-let webpack = require('webpack');
+let path = require('path');
 
 module.exports = {
-    context: __dirname,
-    devtool: debug ? "inline-sourcemap" : false,
-    entry: "./js/todo/scripts.js",
+    entry: './js/todo/index.js',
     output: {
-        path: __dirname + "/js",
-        filename: "scripts.min.js"
-    },
-    plugins: debug ? [] : [
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-    ],
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    }
 };

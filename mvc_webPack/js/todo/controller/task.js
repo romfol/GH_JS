@@ -1,4 +1,9 @@
-function taskController(rootElement) {
+import tasks from '../model/task';
+import taskView from '../view/task';
+import taskAddFormView from '../view/taskAddForm';
+
+
+export default function taskController(rootElement) {
 
     taskView(rootElement, tasks, {
         onDone,

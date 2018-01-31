@@ -1,4 +1,4 @@
-function taskAddFormView(rootElement, actions) {
+export default function taskAddFormView(rootElement, actions) {
     let form = document.createElement('form');
     form.innerHTML = `
         <input type="text" name="text">

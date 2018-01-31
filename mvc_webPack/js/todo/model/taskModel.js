@@ -1,3 +1,6 @@
+import tasks from '../model/task';
+export default TaskModel;
+
 function TaskModel(tasks) {
     let allTasks = JSON.parse(localStorage.getItem('allTasks'));
     this.listeners = [];
@@ -86,5 +89,7 @@ let options = {
     hour: 'numeric',
     minute: 'numeric'
 };
+
+
 
 
