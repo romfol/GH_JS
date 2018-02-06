@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -68,7 +68,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__taskModel__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__taskModel__ = __webpack_require__(3);
 
 
 
@@ -78,6 +78,64 @@ let tasks = new __WEBPACK_IMPORTED_MODULE_0__taskModel__["a" /* default */]([]);
 
 /***/ }),
 /* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__controller_task__ = __webpack_require__(2);
+
+const css = __webpack_require__(6);
+
+window.addEventListener('load', function () {
+    Object(__WEBPACK_IMPORTED_MODULE_0__controller_task__["a" /* default */])(document.getElementById('todo-list'));
+});
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = taskController;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_task__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__view_task__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_taskAddForm__ = __webpack_require__(5);
+
+
+
+
+
+function taskController(rootElement) {
+
+    Object(__WEBPACK_IMPORTED_MODULE_1__view_task__["a" /* default */])(rootElement, __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */], {
+        onDone,
+        onDelete,
+        onMove
+    });
+
+    Object(__WEBPACK_IMPORTED_MODULE_2__view_taskAddForm__["a" /* default */])(rootElement, {
+        onSubmit
+    });
+
+    function onDone(task, status) {
+        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].done(task, status);
+    }
+
+    function onDelete(task) {
+        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].delete(task);
+    }
+
+    function onSubmit(text) {
+        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].add(text);
+    }
+
+    function onMove(task) {
+        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].move(task);
+    }
+}
+
+/***/ }),
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -178,64 +236,6 @@ let options = {
 
 
 
-
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__controller_task__ = __webpack_require__(3);
-
-const css = __webpack_require__(6);
-
-window.addEventListener('load', function () {
-    Object(__WEBPACK_IMPORTED_MODULE_0__controller_task__["a" /* default */])(document.getElementById('todo-list'));
-});
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = taskController;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_task__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__view_task__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_taskAddForm__ = __webpack_require__(5);
-
-
-
-
-
-function taskController(rootElement) {
-
-    Object(__WEBPACK_IMPORTED_MODULE_1__view_task__["a" /* default */])(rootElement, __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */], {
-        onDone,
-        onDelete,
-        onMove
-    });
-
-    Object(__WEBPACK_IMPORTED_MODULE_2__view_taskAddForm__["a" /* default */])(rootElement, {
-        onSubmit
-    });
-
-    function onDone(task, status) {
-        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].done(task, status);
-    }
-
-    function onDelete(task) {
-        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].delete(task);
-    }
-
-    function onSubmit(text) {
-        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].add(text);
-    }
-
-    function onMove(task) {
-        __WEBPACK_IMPORTED_MODULE_0__model_task__["a" /* default */].move(task);
-    }
-}
 
 /***/ }),
 /* 4 */
@@ -412,7 +412,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "body, html {\n    margin: 0;\n    padding: 0;\n}\n\nheader {\n    width: 90%;\n    margin: 0 auto 10px;\n    text-align: center;\n    border: 1px solid #ddd;\n    background-color: #eee;\n    border-radius: 0 0 5px 5px;\n    padding: 10px;\n}\n\n#todo-list {\n    width: 80%;\n    margin: 100px auto 0;\n    border: 1px solid #ccc;\n    border-radius: 5px;\n    padding: 10px;\n}\n\n#todo-list ul {\n    padding: 0;\n}\n\n#todo-list li {\n    display: block;\n    height: 30px;\n    font-size: 25px;\n    font-family: Verdana;\n}\n\n.date {\n    font-size: small;\n}\n\n.text {\n    margin-left: 10%;\n    margin-right: 10%;\n}\n\n#todo-list li button {\n    float: right;\n}", ""]);
+exports.push([module.i, "body,html{margin:0;padding:0}header{width:90%;margin:0 auto 10px;text-align:center;border:1px solid #ddd;background-color:#eee;border-radius:0 0 5px 5px;padding:10px}#todo-list{width:80%;margin:100px auto 0;border:1px solid #ccc;border-radius:5px;padding:10px}#todo-list ul{padding:0}#todo-list li{display:block;height:30px;font-size:25px;font-family:Verdana}.date{font-size:small}.text{margin-left:10%;margin-right:10%}#todo-list li button{float:right}", ""]);
 
 // exports
 
