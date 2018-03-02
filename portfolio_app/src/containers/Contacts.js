@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 
-export default class Home extends Component {
+export default class Contacts extends Component {
     static propTypes = {};
 
     render() {
         return <div>
-            <h1>HI React;)</h1>
+            <h1>HI Contacts</h1>
         </div>
     }
 }
