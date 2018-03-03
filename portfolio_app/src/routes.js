@@ -1,18 +1,18 @@
-import  React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import  React, {Component} from 'react';
+import { Router, Route, Link } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
+
 import Home from './containers/Home';
 import Resume from './containers/Resume';
 import Skills from './containers/Skills';
 import Contacts from './containers/Contacts';
 
+const customHistory = createBrowserHistory();
 
-const history = createBrowserHistory();
-
-class Navigation extends React.Component {
+export default class Navigation extends Component {
     render() {
         return (
-            <BrowserRouter history={history}>
+            <Router history={customHistory}>
                 <div>
                     <ul>
                         <li><Link to="/">Home</Link></li>
@@ -26,10 +26,8 @@ class Navigation extends React.Component {
                     <Route path="/skills" component={Skills}/>
                     <Route path="/contacts" component={Contacts}/>
                 </div>
-            </BrowserRouter>
+            </Router>
         )
     }
 }
-
-export default Navigation;
 
