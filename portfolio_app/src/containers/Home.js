@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
+import Container from '../theme/grid/container';
 
 const Image = styled.img`
     border-radius: 100px;
@@ -14,11 +15,11 @@ export default class Home extends Component {
 
     render() {
         return (
-        <div>
+        <Container>
             <h1>HI React;)</h1>
-            <p>dfdewbfwneijlfhir uhefwiuefhiwuefh iuw fhuwi efhiwue f</p>
+            <p>Dfdewbfwneijlfhir uhefwiuefhiwuefh iuw fhuwi efhiwue f</p>
             <Image src={require('../assets/me.png')} alt="myself"/>
-        </div>
+        </Container>
         )
     }
 }
