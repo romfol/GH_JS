@@ -21,7 +21,7 @@ export default class Navigation extends Component {
                         <li><Link to="/contacts">Contacts</Link></li>
                     </ul>
                     <hr/>
-                    <Route path="/" component={Home}/>
+                    <Route exact path="/" component={Home}/>
                     <Route path="/resume" component={Resume}/>
                     <Route path="/skills" component={Skills}/>
                     <Route path="/contacts" component={Contacts}/>

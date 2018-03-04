@@ -1,4 +1,13 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import styled from 'styled-components';
+
+const Image = styled.img`
+    border-radius: 100px;
+  
+    position: absolute;
+    right: 5em;`;
+
+//const homeSt = styled.Home
 
 export default class Home extends Component {
     static propTypes = {};
@@ -7,7 +16,8 @@ export default class Home extends Component {
         return (
         <div>
             <h1>HI React;)</h1>
-            <img src={require('../assets/me.png')} alt="myself"/>
+            <p>dfdewbfwneijlfhir uhefwiuefhiwuefh iuw fhuwi efhiwue f</p>
+            <Image src={require('../assets/me.png')} alt="myself"/>
         </div>
         )
     }
