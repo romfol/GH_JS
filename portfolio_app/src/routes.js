@@ -1,10 +1,10 @@
 import  React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import Home from './containers/Home';
-import Resume from './containers/Resume';
-import Skills from './containers/Skills';
-import Contacts from './containers/Contacts';
+import Home from './containers/Home/Home';
+import Resume from './containers/Resume/Resume';
+import Skills from './containers/Skills/Skills';
+import Contacts from './containers/Contacts/Contacts';
 
 export default class Navigation extends Component {
     render() {

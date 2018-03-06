@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import Container from '../theme/grid/container';
+import {Container} from '../../theme/grid';
 
 const Image = styled.img`
     border-radius: 100px;
@@ -26,7 +26,7 @@ export default class Home extends Component {
                 Sit natum aeterno ancillae at, in pro aeterno legendos. Mel quem sapientem ne. Ut impedit denique invenire est. Mei melius euripidis conceptam eu, eam an tota illud nihil, an utamur volumus sit.
 
                 Modus hendrerit at has. liberavisse ne, nec cu eirmod nonumes corpora, mucius lucilius ut sed. Eam ne labores sapientem. Error accusata consulatu eam no. Mel at tempor intellegat appellantur.</p>
-            <Image src={require('../assets/me.png')} alt="myself"/>
+            <Image src={require('../../assets/me.png')} alt="myself"/>
         </Container>
         )
     }
