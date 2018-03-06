@@ -1,18 +1,15 @@
 import  React, {Component} from 'react';
-import { Router, Route, Link } from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import Home from './containers/Home';
 import Resume from './containers/Resume';
 import Skills from './containers/Skills';
 import Contacts from './containers/Contacts';
 
-const customHistory = createBrowserHistory();
-
 export default class Navigation extends Component {
     render() {
         return (
-            <Router history={customHistory}>
+            <Router>
                 <div>
                     <ul>
                         <li><Link to="/">Home</Link></li>
