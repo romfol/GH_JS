@@ -5,7 +5,7 @@ injectGlobal`
     body {
         font-family: 'Raleway', sans-serif;
         background-image: url('${require('../assets/bckg-photo.jpg')}');
-        background-size: 100%;
+        background-size: cover;      
         background-repeat: no-repeat;
         background-color: #cccccc;
         color: white;

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Container} from '../../theme/grid';
-import  {Image} from  './Home.style';
-import {Wrapper} from './Home.style';
+import  {Image, Wrapper} from  './Home.style';
 
 export default class Home extends Component {
    // static propTypes = {};
